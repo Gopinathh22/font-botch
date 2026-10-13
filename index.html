@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>More Homes, Fewer People｜Xiaoliuqiu Data Story</title>
+  <meta name="description" content="A D3.js scrollytelling data story about household change, ageing and welfare spending on Xiaoliuqiu (Liuqiu Township), Taiwan. 小琉球戶增人減與急遽老化的資料故事。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2313202a'/%3E%3Cpath d='M5 21q5-5 11 0t11 0' stroke='%23e0603d' stroke-width='2.5' fill='none'/%3E%3Ccircle cx='21' cy='11' r='4' fill='%23fbf7f0'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="sea" aria-hidden="true"><svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path class="w1" d="M0 60 Q150 20 300 60 T600 60 T900 60 T1200 60 V120 H0Z"/><path class="w2" d="M0 75 Q150 40 300 75 T600 75 T900 75 T1200 75 V120 H0Z"/></svg></div>
+
+  <header class="topbar">
+    <a class="brand" href="#top"><span class="word">Xiaoliuqiu</span><span class="sub" data-i18n="ui.brand">A DATA STORY</span></a>
+    <nav class="toc" aria-label="chapters">
+      <a href="#ch1">01</a><a href="#ch2">02</a><a href="#ch3">03</a><a href="#ch4">04</a><a href="#ch5">05</a><a href="#end">→</a>
+    </nav>
+    <button class="btn" id="btn-lang" type="button" data-i18n="ui.lang" data-i18n-aria="ui.langLabel">中文</button>
+    <div class="progress"></div>
+  </header>
+
+  <main id="top">
+    <!-- ===== Lead ===== -->
+    <section class="hero">
+      <p class="kicker" data-i18n="hero.kicker"></p>
+      <h1 data-i18n="hero.title"></h1>
+      <p class="hero-sub" data-i18n="hero.sub"></p>
+      <p class="lede" data-i18n="hero.lede"></p>
+      <div class="stats">
+        <div class="stat"><p class="label" data-i18n="stat.pop"></p><p class="value"><span data-count="14169,12190">12,190</span></p><p class="delta"><span>14,169 →</span><span class="tag down">−14%</span></p></div>
+        <div class="stat"><p class="label" data-i18n="stat.hh"></p><p class="value"><span data-count="3090,5094">5,094</span></p><p class="delta"><span>3,090 →</span><span class="tag up">+65%</span></p></div>
+        <div class="stat"><p class="label" data-i18n="stat.dep"></p><p class="value"><span data-count="33.2,41.0" data-dec="1">41.0</span></p><p class="delta"><span>33.2 →</span><span class="tag up">+23%</span></p></div>
+      </div>
+      <p class="cue" data-i18n="ui.scroll"></p>
+    </section>
+
+    <!-- ===== Chapter 1 · js/ch1-trend.js ===== -->
+    <section class="chapter" id="ch1">
+      <header class="chapter-head reveal">
+        <span class="kicker" data-i18n="ch1.kicker"></span>
+        <h2 data-i18n="ch1.title"></h2>
+        <p class="sub" data-i18n="ch1.sub"></p>
+      </header>
+      <div class="scrolly">
+        <figure class="figure" id="fig1">
+          <figcaption class="fig-head"><span class="fig-no">FIG 01</span><span class="fig-title" data-i18n="ch1.fig"></span><button class="replay" type="button" data-i18n="ui.replay"></button></figcaption>
+          <div class="legend"><span class="key"><i class="ln" style="--c:#1f6fb2"></i><span data-i18n="lbl.popIdx"></span></span><span class="key"><i class="ln" style="--c:#e0603d"></i><span data-i18n="lbl.hhIdx"></span></span></div>
+          <div class="chart"></div>
+          <details class="table-view"></details>
+        </figure>
+        <div class="steps">
+          <div class="step" data-step="0"><div class="card"><span class="no">01.1</span><p data-i18n="ch1.s1"></p></div></div>
+          <div class="step" data-step="1"><div class="card"><span class="no">01.2</span><p data-i18n="ch1.s2"></p></div></div>
+          <div class="step" data-step="2"><div class="card"><span class="no">01.3</span><p data-i18n="ch1.s3"></p><p class="next"><span data-i18n="ui.question"></span><b data-i18n="ch1.q"></b></p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Chapter 2 · js/ch2-villages.js ===== -->
+    <section class="chapter" id="ch2">
+      <header class="chapter-head reveal">
+        <span class="kicker" data-i18n="ch2.kicker"></span>
+        <h2 data-i18n="ch2.title"></h2>
+        <p class="sub" data-i18n="ch2.sub"></p>
+      </header>
+      <div class="scrolly">
+        <figure class="figure" id="fig2">
+          <figcaption class="fig-head"><span class="fig-no">FIG 02</span><span class="fig-title" data-i18n="ch2.fig"></span><button class="replay" type="button" data-i18n="ui.replay"></button></figcaption>
+          <div class="chart"></div>
+          <details class="table-view"></details>
+        </figure>
+        <div class="steps">
+          <div class="step" data-step="0"><div class="card"><span class="no">02.1</span><p data-i18n="ch2.s1"></p></div></div>
+          <div class="step" data-step="1"><div class="card"><span class="no">02.2</span><p data-i18n="ch2.s2"></p></div></div>
+          <div class="step" data-step="2"><div class="card"><span class="no">02.3</span><p data-i18n="ch2.s3"></p><p class="next"><span data-i18n="ui.question"></span><b data-i18n="ch2.q"></b></p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Chapter 3 · js/ch3-pyramid.js ===== -->
+    <section class="chapter" id="ch3">
+      <header class="chapter-head reveal">
+        <span class="kicker" data-i18n="ch3.kicker"></span>
+        <h2 data-i18n="ch3.title"></h2>
+        <p class="sub" data-i18n="ch3.sub"></p>
+      </header>
+      <div class="scrolly">
+        <figure class="figure" id="fig3">
+          <figcaption class="fig-head"><span class="fig-no">FIG 03</span><span class="fig-title" data-i18n="ch3.fig"></span><button class="replay" type="button" data-i18n="ui.replay"></button></figcaption>
+          <div class="legend"><span class="key"><i class="sw" style="--c:#1f6fb2"></i><span data-i18n="lbl.men"></span></span><span class="key"><i class="sw" style="--c:#e0603d"></i><span data-i18n="lbl.women"></span></span><span class="key"><i class="ol"></i><span data-i18n="lbl.outline"></span></span></div>
+          <div class="chart"></div>
+          <details class="table-view"></details>
+        </figure>
+        <div class="steps">
+          <div class="step" data-step="0"><div class="card"><span class="no">03.1</span><p data-i18n="ch3.s1"></p></div></div>
+          <div class="step" data-step="1"><div class="card"><span class="no">03.2</span><p data-i18n="ch3.s2"></p></div></div>
+          <div class="step" data-step="2"><div class="card"><span class="no">03.3</span><p data-i18n="ch3.s3"></p><p class="next"><span data-i18n="ui.question"></span><b data-i18n="ch3.q"></b></p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Chapter 4 · js/ch4-welfare.js ===== -->
+    <section class="chapter" id="ch4">
+      <header class="chapter-head reveal">
+        <span class="kicker" data-i18n="ch4.kicker"></span>
+        <h2 data-i18n="ch4.title"></h2>
+        <p class="sub" data-i18n="ch4.sub"></p>
+      </header>
+      <div class="scrolly">
+        <figure class="figure" id="fig4">
+          <figcaption class="fig-head"><span class="fig-no">FIG 04</span><span class="fig-title" data-i18n="ch4.fig"></span><button class="replay" type="button" data-i18n="ui.replay"></button></figcaption>
+          <div class="legend"><span class="key"><i class="ln" style="--c:#1f6fb2"></i>2014–2019</span><span class="key"><i class="ln" style="--c:#e0603d"></i>2019–2024</span></div>
+          <div class="chart"></div>
+          <details class="table-view"></details>
+        </figure>
+        <div class="steps">
+          <div class="step" data-step="0"><div class="card"><span class="no">04.1</span><p data-i18n="ch4.s1"></p></div></div>
+          <div class="step" data-step="1"><div class="card"><span class="no">04.2</span><p data-i18n="ch4.s2"></p></div></div>
+          <div class="step" data-step="2"><div class="card"><span class="no">04.3</span><p data-i18n="ch4.s3"></p><p class="next"><span data-i18n="ui.question"></span><b data-i18n="ch4.q"></b></p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Chapter 5 (optional) · js/ch5-budget.js ===== -->
+    <section class="chapter" id="ch5">
+      <header class="chapter-head reveal">
+        <span class="kicker" data-i18n="ch5.kicker"></span>
+        <h2 data-i18n="ch5.title"></h2>
+        <p class="sub" data-i18n="ch5.sub"></p>
+      </header>
+      <div class="scrolly">
+        <figure class="figure" id="fig5">
+          <figcaption class="fig-head"><span class="fig-no">FIG 05</span><span class="fig-title" data-i18n="ch5.fig"></span><button class="replay" type="button" data-i18n="ui.replay"></button></figcaption>
+          <div class="chart"></div>
+          <details class="table-view"></details>
+        </figure>
+        <div class="steps">
+          <div class="step" data-step="0"><div class="card"><span class="no">05.1</span><p data-i18n="ch5.s1"></p></div></div>
+          <div class="step" data-step="1"><div class="card"><span class="no">05.2</span><p data-i18n="ch5.s2"></p></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Conclusion ===== -->
+  <footer class="ending" id="end">
+    <div class="inner">
+      <section class="reveal">
+        <span class="kicker" data-i18n="end.kicker"></span>
+        <h2 data-i18n="end.title"></h2>
+        <p class="body" data-i18n="end.body"></p>
+        <blockquote class="hmw" data-i18n="end.hmw"></blockquote>
+      </section>
+
+      <section class="method reveal">
+        <h3 data-i18n="meth.title"></h3>
+        <p data-i18n="meth.lede"></p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th data-i18n="meth.chart"></th><th data-i18n="meth.tool"></th><th data-i18n="meth.why"></th><th data-i18n="meth.limit"></th><th data-i18n="meth.fix"></th></tr></thead>
+            <tbody>
+              <tr><td data-i18n="m1.c"></td><td>Flourish</td><td data-i18n="m1.w"></td><td data-i18n="m1.l"></td><td data-i18n="m1.f"></td></tr>
+              <tr><td data-i18n="m2.c"></td><td>Flourish</td><td data-i18n="m2.w"></td><td data-i18n="m2.l"></td><td data-i18n="m2.f"></td></tr>
+              <tr><td data-i18n="m3.c"></td><td>Datawrapper</td><td data-i18n="m3.w"></td><td data-i18n="m3.l"></td><td data-i18n="m3.f"></td></tr>
+              <tr><td data-i18n="m4.c"></td><td>Flourish</td><td data-i18n="m4.w"></td><td data-i18n="m4.l"></td><td data-i18n="m4.f"></td></tr>
+              <tr><td data-i18n="m5.c"></td><td>Datawrapper</td><td data-i18n="m5.w"></td><td data-i18n="m5.l"></td><td data-i18n="m5.f"></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="about reveal">
+        <h3 data-i18n="src.title"></h3>
+        <p data-i18n="src.body"></p>
+        <p data-i18n="src.dl"></p>
+        <ul class="downloads">
+          <li><a href="data/trend.csv" download>trend.csv</a></li>
+          <li><a href="data/villages.csv" download>villages.csv</a></li>
+          <li><a href="data/pyramid.csv" download>pyramid.csv</a></li>
+          <li><a href="data/welfare.csv" download>welfare.csv</a></li>
+          <li><a href="data/budget.csv" download>budget.csv</a></li>
+        </ul>
+      </section>
+      <p class="foot" data-i18n="foot"></p>
+    </div>
+  </footer>
+
+  <!-- D3 is vendored locally so the page works offline -->
+  <script src="js/vendor/d3.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/ch1-trend.js"></script>
+  <script src="js/ch2-villages.js"></script>
+  <script src="js/ch3-pyramid.js"></script>
+  <script src="js/ch4-welfare.js"></script>
+  <script src="js/ch5-budget.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
